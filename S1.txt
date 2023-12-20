@@ -1,0 +1,36 @@
+import RPi.GPIO as GPIO
+import time
+
+# Set GPIO mode and warnings
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+
+# Define GPIO pins for switches and LEDs
+switch1_pin = 17
+switch2_pin = 18
+led1_pin = 27
+led2_pin = 22
+
+# Setup GPIO pins
+GPIO.setup(switch1_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(switch2_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(led1_pin, GPIO.OUT)
+GPIO.setup(led2_pin, GPIO.OUT)
+
+try:
+    while True:
+        # Read the state of switches
+        switch1_state = GPIO.input(switch1_pin)
+        switch2_state = GPIO.input(switch2_pin)
+
+        # Switch on/off LEDs based on switch states
+        GPIO.output(led1_pin, not switch1_state)
+        GPIO.output(led2_pin, not switch2_state)
+
+        time.sleep(0.1)
+
+except KeyboardInterrupt:
+    print("Exiting...")
+finally:
+    # Cleanup GPIO settings
+    GPIO.cleanup()
