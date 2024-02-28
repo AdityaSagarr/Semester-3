@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raspberry PI Remote Control</title>
+</head>
+<body>
+    <h1>Raspberry PI Remote Control</h1>
+    <h2>Light Status: {{ templateData.status }}, Last Modified: {{ templateData.time }}</h2>
+    <form action="http://192.168.0.71:4000/redledon" method="get">
+        <input type="submit" value="Red LED On">
+    </form>
+    <form action="http://192.168.0.71:4000/redledoff" method="get">
+        <input type="submit" value="Red LED Off">
+    </form>
+</body>
+</html>
