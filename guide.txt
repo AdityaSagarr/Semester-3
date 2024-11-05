@@ -1,0 +1,64 @@
+==========================Create your virtual environments in D:\Envs:===============
+python -m venv D:\Envs\env2
+
+
+==========================Activate and Install ipykernel:============================
+D:\Envs\env2\Scripts\activate
+pip install ipykernel
+python -m ipykernel install --user --name=env2 --display-name "Python (env2)"
+deactivate  
+
+==========================Activate :=================================================
+D:\Envs\env2\Scripts\activate
+
+==============================RUN JUPYTER============================================
+jupyter notebook
+
+--------------------------------------------------------------
+D:\Envs\env2\Scripts\activate
+
+python welcome.py
+
+
+pip install -r requirements.txt
+
+
+
+---------------------------------delete and remove
+rmdir /S /Q D:\Envs\env11
+jupyter kernelspec uninstall env11
+
+
+
+streamlit run app.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
